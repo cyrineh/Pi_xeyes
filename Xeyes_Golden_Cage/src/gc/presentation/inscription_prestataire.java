@@ -15,14 +15,14 @@ import javax.swing.JOptionPane;
  *
  * @author Cyrine
  */
-public class inscription_prestataire extends javax.swing.JFrame {
+public class Inscription_prestataire extends javax.swing.JFrame {
 
     /**
      * Creates new form Ajout_prestataire
      */
-    public inscription_prestataire() {
+    public Inscription_prestataire() {
         initComponents();
-        this.pack();
+        //this.pack();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -76,7 +76,7 @@ public static boolean isValiEmail(String mail)
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inscription");
-        setPreferredSize(new java.awt.Dimension(620, 380));
+        setPreferredSize(new java.awt.Dimension(600, 380));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -295,20 +295,20 @@ public static boolean isValiEmail(String mail)
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(inscription_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Inscription_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(inscription_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Inscription_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(inscription_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Inscription_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(inscription_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Inscription_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new inscription_prestataire().setVisible(true);
+                new Inscription_prestataire().setVisible(true);
             }
         });
     }

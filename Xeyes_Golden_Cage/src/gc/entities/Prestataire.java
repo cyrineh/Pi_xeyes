@@ -8,7 +8,7 @@ package gc.entities;
  *
  * @author Cyrine
  */
-public class Prestataire 
+public class Prestataire implements Comparable<Prestataire>
 {
     private int id;
     private String adresse_mail;
@@ -74,9 +74,7 @@ public class Prestataire
         this.logo = logo;
     }
 
-    /**
-     * @return the adresse
-     */
+    
     public String getAdresse() {
         return adresse;
     }
@@ -132,7 +130,7 @@ public class Prestataire
     
     public String toString()
     {
-        return id+"\t"+pseudo+"\t"+adresse_mail+"\t"+motDePasse+"\t"+adresse_mail+"\t"+tel+"\t"+logo;
+        return id+"\t"+pseudo+"\t"+adresse_mail+"\t"+motDePasse+"\t"+adresse+"\t"+tel+"\t"+service;
     }
 
     /**
@@ -149,5 +147,10 @@ public class Prestataire
         this.description = description;
     }
     
-    
+   
+
+    @Override
+    public int compareTo(Prestataire o) {
+        return this.pseudo.toUpperCase().compareTo(o.getPseudo().toUpperCase());
+    }
 }

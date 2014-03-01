@@ -6,7 +6,10 @@ package gc.presentation;
 
 import gc.dao.PrestataireDAO;
 import gc.entities.Prestataire;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -15,13 +18,16 @@ import javax.swing.table.AbstractTableModel;
  */
 public class AfficherPrestataire extends AbstractTableModel
 {
-    
-    List <Prestataire> prestataires;
+    List <Prestataire> prestataires_l;
+    Set <Prestataire> prestataires=new TreeSet<Prestataire>();
+     List<Prestataire> list_triee=new ArrayList<Prestataire>();
+   
 //String [] columTab = {"id","mot de passe", "mail","Nom","adresse","tel","logo","service"};
 String [] columTab = {"id","Nom","service"};
     public AfficherPrestataire() {
         PrestataireDAO prestataireDAO = new PrestataireDAO();
-        prestataires = prestataireDAO.DisplayAllPrestataires();
+        prestataires_l = prestataireDAO.DisplayAllPrestataires();
+       
 
     }
     
@@ -29,6 +35,7 @@ String [] columTab = {"id","Nom","service"};
     {
          PrestataireDAO prestataireDAO = new PrestataireDAO();
         prestataires = prestataireDAO.recherchePrestataires_parSousNom(str);
+        
     }
    
     /*public void addRow(Prestataire p)
@@ -47,12 +54,19 @@ String [] columTab = {"id","Nom","service"};
     }
     @Override
  public Object getValueAt(int rowIndex, int columnIndex) {
-       switch(columnIndex)
+       
+        for(Prestataire p:prestataires)
+        {
+                list_triee.add(p);
+        }
+       
+        switch(columnIndex)
        {
-          
-          case 0 : return prestataires.get(rowIndex).getId();
-          case 1 : return prestataires.get(rowIndex).getPseudo();
-          case 2 : return prestataires.get(rowIndex).getService();
+         
+           
+          case 0 : return list_triee.get(rowIndex).getId();
+          case 1 : return list_triee.get(rowIndex).getPseudo();
+          case 2 : return list_triee.get(rowIndex).getService();
          
           default: return null;
        }

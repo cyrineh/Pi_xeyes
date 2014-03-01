@@ -7,6 +7,8 @@ package gc.test;
 import gc.dao.PrestataireDAO;
 import gc.entities.Prestataire;
 import gc.util.MyConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -20,18 +22,14 @@ public class Xeyes_Golden_Cage {
     public static void main(String[] args) {
         // TODO code application logic here
         MyConnection.getInstance();
-        PrestataireDAO p=new PrestataireDAO();
-                System.out.println(p.selectPrestataireByNom("Mme Hachicha"));
-                
-             String s1="salut";
-             String s2="Bonjour salut toi ";
-             System.out.println("position "+s2.indexOf(s1));
+       
              
-            System.out.println( String.valueOf(1));
-            
             PrestataireDAO pdao=new PrestataireDAO();
-        Prestataire pi=pdao.findPrestataireById(3);
-        System.out.println(pi.toString());
+           Prestataire p =null;
+         p =pdao.findPrestataireByAdresseMail("relais@gailcom");
+        if(p.getId()==0) {
+            System.out.println(p);
+        }
                 
         
         

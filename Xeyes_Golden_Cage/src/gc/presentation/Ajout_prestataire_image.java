@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
@@ -26,12 +27,12 @@ import javax.swing.JOptionPane;
  *
  * @author Cyrine
  */
-public class Ajout_prestataire extends javax.swing.JFrame {
+public class Ajout_prestataire_image extends javax.swing.JFrame {
         byte[] person_image=null;
     /**
      * Creates new form Ajout_prestataire
      */
-    public Ajout_prestataire() {
+    public Ajout_prestataire_image() {
         initComponents();
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.pack();
@@ -92,7 +93,6 @@ public class Ajout_prestataire extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inscription");
-        setPreferredSize(new java.awt.Dimension(620, 380));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -292,6 +292,9 @@ public class Ajout_prestataire extends javax.swing.JFrame {
             p.setAdresse_mail(tfAdresseMail.getText());
             p.setPseudo(tfPseudo.getText());
             p.setLogo(tfLogo.getText());
+            
+          
+            
             p.setAdresse(tfAdresse.getText());
             p.setService((String)cbService.getSelectedItem());
             p.setMotDePasse(tfMotDePasse.getText());
@@ -420,20 +423,20 @@ public class Ajout_prestataire extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ajout_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ajout_prestataire_image.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ajout_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ajout_prestataire_image.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ajout_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ajout_prestataire_image.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ajout_prestataire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ajout_prestataire_image.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ajout_prestataire().setVisible(true);
+                new Ajout_prestataire_image().setVisible(true);
             }
         });
     }

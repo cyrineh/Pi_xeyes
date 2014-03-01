@@ -31,17 +31,21 @@ public class Afficher_prestataire extends javax.swing.JFrame {
        
         initComponents();
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-         //this.pack();
+         
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        /*
-        Table_pres.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-   JTableHeader header = Table_pres.getTableHeader();
+        
+       // Table_pres.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+  
+       JTableHeader header = Table_pres.getTableHeader();
    TableColumn column =  Table_pres.getColumnModel().getColumn(0);
    header.setResizingColumn(column);            // this line is very important
    column.setMinWidth(0);           // permettre une largeur zéro
    column.setWidth(0);
-   */
+   
+    //column.setCellEditor(null);
+   
+   
     }
     public Afficher_prestataire(String s) {
        
@@ -54,8 +58,8 @@ public class Afficher_prestataire extends javax.swing.JFrame {
    header.setResizingColumn(column);            // this line is very important
    column.setMinWidth(0);           // permettre une largeur zéro
    column.setWidth(0);
-        
-        
+   
+  
         
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
          //this.pack();
@@ -163,7 +167,7 @@ public class Afficher_prestataire extends javax.swing.JFrame {
         // TODO add your handling code here:
         Ajout_prestataire ajout_prestataire = new Ajout_prestataire();
         //this.setVisible(false);
-        //this.dispose();
+        this.dispose();
         ajout_prestataire.setVisible(true);
     }//GEN-LAST:event_btnAjouterActionPerformed
 
@@ -196,6 +200,7 @@ public class Afficher_prestataire extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSupprimerActionPerformed
 
     private void btnRechercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRechercherActionPerformed
+
         // TODO add your handling code here:
       s=tfChampRecherche.getText();
     
